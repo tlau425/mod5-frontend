@@ -10,9 +10,9 @@ class WarrantiesList extends React.Component{
   }
 
   formatDate(date) {
-    var date = new Date(date)
-    date = moment(date).format('MM-DD-YYYY')
-    return (date)
+    var newDate = new Date(date)
+    newDate = moment(newDate).format('MM-DD-YYYY')
+    return (newDate)
   }
 
   remainingDays(expirationDate){
@@ -20,11 +20,7 @@ class WarrantiesList extends React.Component{
     var b = moment();
     // a.diff(b, 'years');
     return a.diff(b, 'days', true);
-    // moment(expirationDate, "YYYY-MM-DD").fromNow()
   }
-    // var start = moment(purchaseDate, "YYYY-MM-DD").startOf('day');
-    // var end = moment(expirationDate, "YYYY-MM-DD").startOf('day');
-    // return moment.duration(start.diff(end)).asDays();
 
   renderWarranties = () => {
     return this.props.data.map((warranty, index) => {
