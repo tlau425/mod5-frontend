@@ -14,6 +14,17 @@ class WarrantiesContainer extends React.Component{
     })
   }
 
+  saveExpiration = (inst) => {
+    fetch(`http://localhost:3000/api/v1/expirations`,{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+      body: JSON.stringify({warranty: inst})
+    })
+  }
+
   render(){
     console.log(this.state)
     return (

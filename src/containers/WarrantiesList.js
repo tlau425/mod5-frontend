@@ -5,7 +5,7 @@ class WarrantiesList extends React.Component{
 
   sum(purchaseDate, days) {
     var date = new Date(purchaseDate)
-    date = moment(date).add(days + 1, 'day').format('MM-DD-YYYY')
+    date = moment(date).add(days, 'day').format('MM-DD-YYYY')
     return (date)
   }
 
@@ -15,13 +15,16 @@ class WarrantiesList extends React.Component{
     return (date)
   }
 
-  remainingDays(purchaseDate, expirationDate){
-  var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-  var firstDate = new Date(purchaseDate)
-  var secondDate = new Date(expirationDate)
-  var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime())/(oneDay)))
-  return (expirationDate)
+  remainingDays(expirationDate){
+    var a = moment(expirationDate);
+    var b = moment();
+    // a.diff(b, 'years');
+    return a.diff(b, 'days', true);
+    // moment(expirationDate, "YYYY-MM-DD").fromNow()
   }
+    // var start = moment(purchaseDate, "YYYY-MM-DD").startOf('day');
+    // var end = moment(expirationDate, "YYYY-MM-DD").startOf('day');
+    // return moment.duration(start.diff(end)).asDays();
 
   renderWarranties = () => {
     return this.props.data.map((warranty, index) => {

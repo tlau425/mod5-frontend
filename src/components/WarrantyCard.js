@@ -2,6 +2,7 @@ import React from 'react'
 
 const WarrantyCard = props => {
   const {warranty, index, sum, formatDate, remainingDays} = props
+  var temp = sum(warranty.buy_date, warranty.wrnty_days)
 
   return(
     <div className = "column">
@@ -17,7 +18,8 @@ const WarrantyCard = props => {
           <br></br>
           Expires on: {sum(warranty.buy_date, warranty.wrnty_days)}
           <br></br>
-          Remaining Days: {remainingDays(warranty.buy_date,'04/25/2009')}
+
+          Remaining Days: {Math.floor(remainingDays(temp))}
           <br></br>
           <br></br>
         </div>
