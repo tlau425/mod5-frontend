@@ -10,7 +10,6 @@ class WarrantiesList extends React.Component{
         warranty = {warranty}
         days = {this.props.days}
         sum = {this.props.sum}
-        formatDate = {this.formatDate}
         remainingDays = {this.props.remainingDays}
         formatDate = {this.props.formatDate}
         handleClick = {this.props.handleClick}

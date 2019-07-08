@@ -31,20 +31,9 @@ class WarrantiesContainer extends React.Component{
     return a.diff(b, 'days', true);
   }
 
-  saveExpiration = (inst) => {
-    fetch(`http://localhost:3000/api/v1/expirations`,{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      Accept: 'application/json'
-    },
-      body: JSON.stringify({warranty: inst})
-    })
-  }
-
   formatDate(date) {
     var newDate = new Date(date)
-    newDate = moment(newDate).format('MM-DD-YYYY')
+    newDate = moment(newDate).format('DD-MM-YYYY')
     return (newDate)
   }
 
@@ -56,7 +45,7 @@ class WarrantiesContainer extends React.Component{
   }
 
   render(){
-    console.log(this.state)
+    console.log("initial state:", this.state)
     return (
       <div className="grid-container">
         <WarrantiesList
