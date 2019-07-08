@@ -12,11 +12,16 @@ nav{
 }
 
 .nav-links{
-  width: 40%;
+  width: 100%;
   display: flex;
   justify-content: space-background;
   align-items: center;
   list-style: none;
+  margin-right: 40%;
+}
+
+.nav-text{
+  margin: 5px;
 }
 
 .grid-container{
@@ -25,4 +30,18 @@ nav{
   grid-template-columns: 50% 50%;
   background-color: lightblue;
   text-align: center;
+  overflow-y: scroll;
+}
+
+.warrantyCard{
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+  width: 90%;
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px
 }

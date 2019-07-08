@@ -7,21 +7,18 @@ function Nav(){
     color: 'white'
   }
 
-    return(
-      <nav>
-       <h3>Logo</h3>
-       <ul className="nav-links">
-       <Link style={navStyle} to="/">
-       <li>Home</li>
-       </Link>
-        <Link style={navStyle} to="/about">
-          <li>About</li>
-        </Link>
-        <Link style={navStyle} to="/expired">
-          <li>Expired</li>
+  return(
+    <nav>
+      <h3>Logo</h3>
+      <ul className="nav-links">
+         <Link style={navStyle} to="/">
+          <li className="nav-text">Home</li>
+         </Link>
+         <Link style={navStyle} to="/expired">
+          <li className="nav-text">Expired</li>
         </Link>
       </ul>
-      </nav>
+    </nav>
     )
   }
 
