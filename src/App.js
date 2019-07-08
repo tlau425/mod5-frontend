@@ -6,6 +6,20 @@ import Expired from './Expired';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
+  state = {
+    warranties: [],
+    expiredWarranties: [],
+    term: ""
+  }
+
+  componentDidMount = () => {
+    fetch('http://localhost:3000/api/v1/warranties')
+    .then(res => res.json())
+    .then(data => {
+      this.setState({warranties: data})
+    })
+  }
+
   render(){
     return (
       <Router>

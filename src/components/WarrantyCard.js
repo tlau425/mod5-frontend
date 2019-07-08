@@ -13,7 +13,6 @@ class WarrantyCard extends React.Component{
     }
 
   render(){
-    console.log(this.props.warranty.expiration)
     const {warranty, index, sum, formatDate, remainingDays, handleClick} = this.props
     const dateDaySum = sum(warranty.buy_date, warranty.wrnty_days)
   return(

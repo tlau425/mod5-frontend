@@ -1,10 +1,9 @@
 import React from 'react'
 import WarrantyCard from '../components/WarrantyCard'
-import moment from 'moment';
 class WarrantiesList extends React.Component{
 
   renderWarranties = () => {
-    return this.props.data.map((warranty, index) => {
+    return this.props.filteredSearch.map((warranty, index) => {
       return <WarrantyCard
         index = {index}
         warranty = {warranty}
@@ -21,6 +20,9 @@ class WarrantiesList extends React.Component{
     return(
       <div>
         <h1>Warranty List</h1>
+        <input placeholder="Search by Name" value={this.props.term} onChange={this.props.handleSearchChange}/>
+        <br></br>
+        <br></br>
         {this.renderWarranties()}
       </div>
     )

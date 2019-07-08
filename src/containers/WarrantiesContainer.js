@@ -7,7 +7,8 @@ import moment from 'moment';
 class WarrantiesContainer extends React.Component{
   state = {
     warranties: [],
-    expiredWarranties: []
+    expiredWarranties: [],
+    term: ""
   }
 
   componentDidMount = () => {
@@ -15,6 +16,12 @@ class WarrantiesContainer extends React.Component{
     .then(res => res.json())
     .then(data => {
       this.setState({warranties: data})
+    })
+  }
+
+  handleSearchChange = (e) => {
+    this.setState({
+      term: e.target.value
     })
   }
 
@@ -41,14 +48,17 @@ class WarrantiesContainer extends React.Component{
     this.setState({
       expiredWarranties: warranty
     })
-    console.log(this.state.expiredWarranties)
   }
 
   render(){
+    const filteredSearch = this.state.warranties.filter(eachWarranty =>
+      eachWarranty.name.toLowerCase().includes(this.state.term.toLowerCase()))
     console.log("initial state:", this.state)
     return (
       <div className="grid-container">
         <WarrantiesList
+          filteredSearch={filteredSearch}
+          handleSearchChange={this.handleSearchChange}
           data = {this.state.warranties}
           days = {this.calculateDaysLeft}
           sum = {this.sum}
