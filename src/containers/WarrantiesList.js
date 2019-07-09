@@ -4,6 +4,8 @@ class WarrantiesList extends React.Component{
 
   renderWarranties = () => {
     return this.props.filteredSearch.map((warranty, index) => {
+      const dateDaySum = this.props.sum(warranty.buy_date, warranty.wrnty_days)
+      const daysLeft = Math.floor(this.props.remainingDays(dateDaySum))+1
       return <WarrantyCard
         index = {index}
         warranty = {warranty}

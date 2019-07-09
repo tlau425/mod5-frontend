@@ -4,11 +4,13 @@ import ExpiringSoonList from './ExpiringSoonList'
 import ExpiredWarrantiesList from './ExpiredWarrantiesList'
 import moment from 'moment';
 
+
 class WarrantiesContainer extends React.Component{
   state = {
     warranties: [],
     expiredWarranties: [],
-    term: ""
+    term: "",
+    showPage: false
   }
 
   componentDidMount = () => {
@@ -46,7 +48,7 @@ class WarrantiesContainer extends React.Component{
 
   handleClick = (warranty) => {
     this.setState({
-      expiredWarranties: warranty
+      showPage: true
     })
   }
 

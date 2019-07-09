@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Nav from './Nav';
 import Home from './Home';
-import Expired from './Expired';
+import Create from './Create';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
@@ -20,6 +20,17 @@ class App extends React.Component {
     })
   }
 
+  handleSubmit = (newWarranty) => {
+    fetch(`http://localhost:3000/api/v1/warranties`,{
+      method:'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      Accept: 'application/json'
+    },
+      body: JSON.stringify({warranty: newWarranty})
+    })
+  }
+
   render(){
     return (
       <Router>
@@ -27,7 +38,7 @@ class App extends React.Component {
           <Nav />
           <Switch>
             <Route path="/" exact component = {Home} />
-            <Route path="/expired" component = {Expired} />
+            <Route path="/create" component = {Create} />
           </Switch>
         </div>
       </Router>
