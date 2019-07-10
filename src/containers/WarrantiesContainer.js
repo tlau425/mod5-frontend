@@ -69,14 +69,13 @@ class WarrantiesContainer extends React.Component{
       showWarranty: (data),
       showPage: !this.state.showPage
     }
-    ,() => console.log('click state', e)
+    ,() => console.log('click state', this.state.showWarranty)
     ))
   }
 
   render(){
     const filteredSearch = this.state.warranties.filter(eachWarranty =>
       eachWarranty.name.toLowerCase().includes(this.state.term.toLowerCase()))
-    console.log("initial state:", this.state)
     return (
       <Router>
         <div className="App">
@@ -85,6 +84,11 @@ class WarrantiesContainer extends React.Component{
             <Popup
             text='Click "Close Button" to hide popup'
             closePopup={this.handleShowPageClick.bind(this)}
+            showWarranty = {this.state.showWarranty}
+            days = {this.calculateDaysLeft}
+            sum = {this.sum}
+            remainingDays = {this.remainingDays}
+            formatDate = {this.formatDate}
             />
             : null
           }

@@ -1,6 +1,5 @@
 import React from 'react'
 import WarrantyCard from '../components/WarrantyCard'
-import moment from 'moment';
 class ExpiredWarrantiesList extends React.Component{
 
   renderWarranties = () => {
@@ -23,7 +22,9 @@ class ExpiredWarrantiesList extends React.Component{
     return(
       <div>
         <h1>Expired Warranty List</h1>
+        <div className="card-container">
           {this.renderWarranties()}
+          </div>
       </div>
     )
   }

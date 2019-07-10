@@ -9,6 +9,7 @@
   margin: auto;
   border-radius: 20px;
   background-color: rgba(0,0,0, 0.5);
+  color: white;
   z-index:99;
 }
 .popup\_inner {
