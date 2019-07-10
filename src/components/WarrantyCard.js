@@ -13,11 +13,10 @@ class WarrantyCard extends React.Component{
     }
 
   render(){
-    const {warranty, index, sum, formatDate, remainingDays, handleClick} = this.props
+    const {warranty, index, sum, formatDate, remainingDays, handleShowPageClick} = this.props
     const dateDaySum = sum(warranty.buy_date, warranty.wrnty_days)
-  return(
-    <div className = "column">
-      <div className = "warrantyCard" onClick={() => handleClick(warranty)}>
+    return(
+      <div className = "warrantyCard" onClick={() => handleShowPageClick(warranty)}>
           {index+1}. {warranty.name}
           <br></br>
           {warranty.notes}
@@ -26,15 +25,14 @@ class WarrantyCard extends React.Component{
           <br></br>
           Purchased on: {formatDate(warranty.buy_date)}
           <br></br>
-          Expires on: {formatDate(dateDaySum)}
+          Expiration Date: {formatDate(dateDaySum)}
           <br></br>
 
           Remaining Days: {Math.floor(remainingDays(dateDaySum))+1}
           <br></br>
           <br></br>
       </div>
-    </div>
-  )
+    )
   }
 }
 export default WarrantyCard;

@@ -14,6 +14,9 @@ function Nav(){
          <Link style={navStyle} to="/">
           <li className="nav-text">Home</li>
          </Link>
+         <Link style={navStyle} to="/expired">
+          <li className="nav-text">Expired</li>
+        </Link>
          <Link style={navStyle} to="/create">
           <li className="nav-text">Create</li>
         </Link>

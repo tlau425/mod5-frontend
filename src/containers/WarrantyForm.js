@@ -48,9 +48,7 @@ class WarrantyForm extends React.Component{
     <div className="field">
       <label>Notes: </label>
       <input placeholder="Description" name="notes" type="text" value={this.state.notes} onChange={this.handleChange}/>
-
     </div>
-
 
     <button className="ui positive basic button"> Submit Warranty</button>
   </form>

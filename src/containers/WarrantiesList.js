@@ -6,6 +6,8 @@ class WarrantiesList extends React.Component{
     return this.props.filteredSearch.map((warranty, index) => {
       const dateDaySum = this.props.sum(warranty.buy_date, warranty.wrnty_days)
       const daysLeft = Math.floor(this.props.remainingDays(dateDaySum))+1
+
+      if (daysLeft > 0)
       return <WarrantyCard
         index = {index}
         warranty = {warranty}
@@ -13,7 +15,7 @@ class WarrantiesList extends React.Component{
         sum = {this.props.sum}
         remainingDays = {this.props.remainingDays}
         formatDate = {this.props.formatDate}
-        handleClick = {this.props.handleClick}
+        handleShowPageClick={this.props.handleShowPageClick}
       />
     })
   }
@@ -22,10 +24,12 @@ class WarrantiesList extends React.Component{
     return(
       <div>
         <h1>Warranty List</h1>
-        <input placeholder="Search by Name" value={this.props.term} onChange={this.props.handleSearchChange}/>
-        <br></br>
-        <br></br>
-        {this.renderWarranties()}
+        <div className="card-container">
+          <input placeholder="Search by Name" value={this.props.term} onChange={this.props.handleSearchChange}/>
+          <br></br>
+          <br></br>
+          {this.renderWarranties()}
+        </div>
       </div>
     )
   }

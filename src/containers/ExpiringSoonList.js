@@ -13,9 +13,9 @@ class ExpiringSoonList extends React.Component{
         warranty={warranty}
         days={this.props.days}
         sum={this.props.sum}
-        formatDate={this.formatDate}
         remainingDays={this.props.remainingDays}
         formatDate={this.props.formatDate}
+        handleShowPageClick={this.props.handleShowPageClick}
       />
     })
   }
@@ -24,7 +24,10 @@ class ExpiringSoonList extends React.Component{
       return(
         <div>
           <h1>Expiring Soon</h1>
-          {this.renderWarranties()}
+          <div className="card-container">
+            {this.renderWarranties()}
+
+          </div>
         </div>
       )
     }

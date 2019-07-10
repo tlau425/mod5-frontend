@@ -7,8 +7,9 @@ nav{
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: lightblue;
-  color: white;
+  background: #FEFCFD;
+  color: black;
+  border-style: outset;
 }
 
 .nav-links{
@@ -22,26 +23,63 @@ nav{
 
 .nav-text{
   margin: 5px;
+  color: black;
+}
+
+.nav-text:hover span{
+    font-weight: normal;
+}
+
+.nav-text:hover{
+    text-decoration:underline;
 }
 
 .grid-container{
   display: grid;
-  margin: 0%;
   grid-template-columns: 50% 50%;
-  background-color: lightblue;
+  padding-left: 15px;
+  background-color: black;
   text-align: center;
-  overflow-y: scroll;
+  position: relative;
+  border-radius: 20px;
+  height: 700px;
+}
+
+.card-container{
+  margin: inherit;
+  width: 90%;
+  height: 500px;
+  border: 3px solid lightblue;
+  padding: 10px;
+  position: relative;
+  overflow: auto;
+  background-color: green;
+  border-radius: 20px;
+  padding-top: 2%;
+  margin-top: 15px;
+}
+
+h1{
+  display: inline-table;
+  grid-template-columns: 45% 45%;
+  margin: auto;
+  width: 50%;
+  margin-top: 15px;
+  background-color: red;
+  border-radius: 5px;
+  text-align: center;
 }
 
 .warrantyCard{
   box-sizing: border-box;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  padding: 15px;
   text-align: center;
   background-color: #f1f1f1;
   width: 90%;
   display: block;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px
+  border-radius: 10px;
+  border: 3px solid red;
+  margin: auto;
+  margin-bottom: 15px;
 }
