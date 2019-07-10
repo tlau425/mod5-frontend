@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Link} from 'react-router-dom'
+import moment from 'moment';
 
 function Nav(){
   const navStyle = {
@@ -21,8 +22,9 @@ function Nav(){
           <li className="nav-text">Create</li>
         </Link>
       </ul>
+
     </nav>
     )
-  }
+}
 
 export default Nav;

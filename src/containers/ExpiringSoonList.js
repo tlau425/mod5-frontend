@@ -26,7 +26,6 @@ class ExpiringSoonList extends React.Component{
           <h1>Expiring Soon</h1>
           <div className="card-container">
             {this.renderWarranties()}
-
           </div>
         </div>
       )

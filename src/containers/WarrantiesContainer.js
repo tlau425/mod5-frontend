@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class WarrantiesContainer extends React.Component{
   state = {
     warranties: [],
+    photos: [],
     expiredWarranties: [],
     term: "",
     showWarranty: {},
@@ -24,7 +25,13 @@ class WarrantiesContainer extends React.Component{
     .then(data => {
       this.setState({warranties: data})
     })
+    fetch('http://localhost:3000/api/v1/photos')
+    .then(newres => newres.json())
+    .then(newdata => {
+      this.setState({photos: newdata})
+    })
   }
+
 
   handleSearchChange = (e) => {
     this.setState({
@@ -69,8 +76,25 @@ class WarrantiesContainer extends React.Component{
       showWarranty: (data),
       showPage: !this.state.showPage
     }
-    ,() => console.log('click state', this.state.showWarranty)
+    ,() => console.log('click state', this.state.photos)
     ))
+  }
+
+  handleDeleteButton = (e) => {
+    const newList = this.state.warranties.filter( eachWarranty => {
+      return eachWarranty.id !== this.state.showWarranty.id})
+      this.setState({
+        warranties: newList,
+        showPage: false
+      })
+    fetch(`http://localhost:3000/api/v1/warranties/${this.state.showWarranty.id}`,{
+      method:'DELETE',
+      headers:{
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({warranties: newList})
+    })
   }
 
   render(){
@@ -89,6 +113,8 @@ class WarrantiesContainer extends React.Component{
             sum = {this.sum}
             remainingDays = {this.remainingDays}
             formatDate = {this.formatDate}
+            pictures = {this.state.photos}
+            handleDeleteButton = {this.handleDeleteButton}
             />
             : null
           }
