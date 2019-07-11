@@ -1,6 +1,20 @@
 .App {
   text-align: center;
 }
+.footer-container{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: #7E7E7E;
+  background-color: #f1f1f1;
+  text-align: left;
+  padding-left: 2%;
+  z-index: 99;
+  margin-top: 1000px;
+  border-style: outset
+}
 
 nav{
   display: flex;
@@ -41,6 +55,7 @@ nav{
 
 .nav-text:hover{
     text-decoration:underline;
+    text-decoration-color: red;
     font-weight: 600;
 }
 
@@ -71,6 +86,17 @@ nav{
 
 }
 
+.form-container{
+  background-color: #F6F4F3;
+  border-radius: 10px;
+  box-shadow: 0 12px 26px 0 rgba(0, 0, 0, .4);
+  margin-top: 10px;
+  height: 20%;
+  position: relative;
+  padding-top: 15px;
+  width: 90%;
+}
+
 h1{
   display: inline-table;
   grid-template-columns: 45% 45%;
@@ -80,6 +106,8 @@ h1{
   background-color: #89BD9E;
   border-radius: 5px;
   text-align: center;
+  position: relative;
+  margin-right: 15px;
 }
 
 .warrantyCard{

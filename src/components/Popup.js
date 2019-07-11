@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.css'
+import moment from 'moment';
 
 class Popup extends React.Component {
 
@@ -10,6 +11,7 @@ class Popup extends React.Component {
   }
 
   render() {
+
     const {showWarranty, formatDate, sum, remainingDays} = this.props
     const dateDaySum = sum(showWarranty.buy_date, showWarranty.wrnty_days)
     const instance = showWarranty
@@ -21,11 +23,11 @@ class Popup extends React.Component {
           <p>
             Personal Notes: {showWarranty.notes}
             <br></br>
-            Purchased on: {formatDate(showWarranty.buy_date)}
+            Purchased on: {showWarranty.buy_date}
             <br></br>
             Warrantied for {showWarranty.wrnty_days} days
             <br></br>
-            Expiration Date: {formatDate(showWarranty.expiration)}
+            Expiration Date: {showWarranty.expiration}
             <br></br>
           <h2>Days Remaining: {Math.floor(remainingDays(dateDaySum))+1} </h2>
           </p>

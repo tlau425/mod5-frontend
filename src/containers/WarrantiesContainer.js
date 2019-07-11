@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from '../Nav'
+import Footer from '../Footer'
 import WarrantiesList from './WarrantiesList'
 import ExpiringSoonList from './ExpiringSoonList'
 import ExpiredWarrantiesList from './ExpiredWarrantiesList'
@@ -76,7 +77,7 @@ class WarrantiesContainer extends React.Component{
       showWarranty: (data),
       showPage: !this.state.showPage
     }
-    ,() => console.log('click state', this.state.photos)
+    ,() => console.log('click state', this.state.warranties)
     ))
   }
 
@@ -104,6 +105,7 @@ class WarrantiesContainer extends React.Component{
       <Router>
         <div className="App">
           <Nav/>
+          <Footer/>
           {this.state.showPage ?
             <Popup
             text='Click "Close Button" to hide popup'

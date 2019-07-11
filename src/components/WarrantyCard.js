@@ -16,12 +16,27 @@ class WarrantyCard extends React.Component{
       const {warranty, index, sum, formatDate, remainingDays, handleShowPageClick} = this.props
       const dateDaySum = sum(warranty.buy_date, warranty.wrnty_days)
       const remaining = Math.floor(remainingDays(dateDaySum))+1
-      if (remaining <= 7){
-      return <p style={{color:'red'}}> Remaining Days: {remaining} </p>
-    }
+      let styles = {
+        color: 'black',
+        "text-decoration-line": "line-through",
+        "text-decoration-color": "red"
+      };
+
+      if (remaining <= 7 && remaining > 0){
+        return <p style={{color:'red'}}> You have {remaining} days left!</p>
+      }
+      else if (remaining <0){
+        return <p>
+          <span style={styles}>
+            Remaining Days
+          </span>
+          <br></br>
+            Expired {Math.abs(remaining)} days ago
+        </p>
+      }
       else {
           return <p> Remaining Days: {remaining} </p>
-    }
+      }
     }
 
   render(){
