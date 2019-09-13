@@ -23,7 +23,7 @@ class Popup extends React.Component {
           <p>
             Personal Notes: {showWarranty.notes}
             <br></br>
-            Purchased on: {showWarranty.buy_date}
+            Purchased on: {formatDate(showWarranty.buy_date)}
             <br></br>
             Warrantied for {showWarranty.wrnty_days} days
             <br></br>
@@ -31,7 +31,7 @@ class Popup extends React.Component {
             <br></br>
           <h2>Days Remaining: {Math.floor(remainingDays(dateDaySum))+1} </h2>
           </p>
-          <button className="closeButton" onClick={this.props.closePopup}>close me</button>
+          <button className="closeButton" onClick={this.props.closePopup}>X</button>
           <button className="deleteButton" name="Delete" onClick={this.props.handleDeleteButton}> Delete Warranty </button>
         </div>
       </div>

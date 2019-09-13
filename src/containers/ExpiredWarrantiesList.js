@@ -19,10 +19,13 @@ class ExpiredWarrantiesList extends React.Component{
     })
   }
   render(){
+    let styles = {
+      "marginRight": "0%"
+    };
     return(
       <div>
-        <h1>Expired Warranty List</h1>
-        <div className="card-container">
+        <h1 style={styles}>Expired Warranty List</h1>
+        <div className="expired-card-container">
           {this.renderWarranties()}
           </div>
       </div>

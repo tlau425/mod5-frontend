@@ -7,10 +7,15 @@ function Nav(){
   const navStyle = {
     color: 'white'
   }
+  let dateStyles = {
+    color: 'black',
+    "margin-right": "10%",
+    "white-space": "nowrap"
+  };
 
   return(
     <nav>
-      <h3>Logo</h3>
+      <h3>Return Book</h3>
       <ul className="nav-links">
          <Link style={navStyle} to="/">
           <li className="nav-text">Home</li>
@@ -22,6 +27,7 @@ function Nav(){
           <li className="nav-text">Create</li>
         </Link>
       </ul>
+      <span style={dateStyles}> Today's Date: July 11, 2019 </span>
 
     </nav>
     )

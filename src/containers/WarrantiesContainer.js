@@ -68,6 +68,9 @@ class WarrantiesContainer extends React.Component{
       },
       body: JSON.stringify({warranty: newWarranty})
     })
+    this.setState({
+      warranties: [...this.state.warranties, newWarranty]
+    })
   }
 
   handleShowPageClick = (e) => {
