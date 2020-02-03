@@ -124,7 +124,6 @@ class WarrantiesContainer extends React.Component{
             : null
           }
           <Switch>
-
             <div className="grid-container">
               <Route exact path="/" render={()=> <>
                 <WarrantiesList
