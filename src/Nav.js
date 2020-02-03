@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Link} from 'react-router-dom'
-import moment from 'moment';
+import Moment from 'moment';
 
 function Nav(){
   const navStyle = {
@@ -12,6 +12,7 @@ function Nav(){
     "margin-right": "10%",
     "white-space": "nowrap"
   };
+  var moment = require('moment')
 
   return(
     <nav>
@@ -22,13 +23,13 @@ function Nav(){
          </Link>
          <Link style={navStyle} to="/expired">
           <li className="nav-text">Expired</li>
-        </Link>
+         </Link>
          <Link style={navStyle} to="/create">
           <li className="nav-text">Create</li>
-        </Link>
+         </Link>
       </ul>
-      <span style={dateStyles}> Today's Date: July 11, 2019 </span>
-
+      <span style={dateStyles}> Today's date: {moment().toDate().getMonth()}/{moment().toDate().getDate()}/{moment().toDate().getFullYear()}
+      </span>
     </nav>
     )
 }
